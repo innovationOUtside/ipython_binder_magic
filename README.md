@@ -67,5 +67,7 @@ The notebook cell count number is currently ambiguous; at the moment it reports 
 
 Having to explicity invoke the `%%binder` cell magic is a faff; something like the approach used in [`cell_shell_magic`](https://github.com/innovationOUtside/cell_shell_magic) to automatically run code in a cell through a cell magic would simplify this, and give us an "as if Binder kernel" experience?
 
+Though it might look like things like dataframes are being returned from the remote kernel, this is a bit fake... the cell output is a `display` of HTML returned from the remote MyBinder kernel.
+
 
 
