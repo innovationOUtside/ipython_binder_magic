@@ -1,7 +1,7 @@
 # `ipython_binder_magic`
 Run commands on a remote MyBinder kernel from your own, locally served, notebook...
 
-This magic provides a barley working example of using Binder magic to launch a MyBinder container from Github and then access it from a notebook running the magic.
+This magic provides a just about working example of using Binder magic to launch a MyBinder container from Github and then access it from a notebook running the magic.
 
 Install from the Github repo:
 
