@@ -11,7 +11,7 @@ The magic can then be loaded as:
 
 `%load_ext binder_magic`
 
-The MyBinder connection should be initiated by calling the `%binder` line magic with a `-r` argument containing the name of the Gituhb repository you want to use as the Binder target.
+The MyBinder connection should be initiated by calling the `%binder` line magic with a `-r` argument containing the name of the Github repository you want to use as the Binder target.
 
 `%binder -r https://github.com/ouseful-demos/ordo`
 
