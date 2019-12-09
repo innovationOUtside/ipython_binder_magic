@@ -248,6 +248,19 @@ def binder_url(repo):
 
     return binderURL
 
+
+from IPython.display import HTML, display
+
+#https://stackoverflow.com/a/50824920/454773
+def _set_background(color='honeydew'):    
+    script = (
+        "var cell = this.closest('.code_cell');"
+        "var editor = cell.querySelector('.input_area');"
+        "editor.style.background='{}';"
+        "this.parentNode.removeChild(this);"
+    ).format(color)
+    display(HTML('<img src onerror="{}">'.format(script)))
+
 from IPython.core.magic import magics_class, line_cell_magic, Magics
 from IPython.core.magic_arguments import argument, magic_arguments, parse_argstring
 
@@ -280,7 +293,12 @@ class BinderMagic(Magics):
         if cell is None:
             print('Use block magic')
         else:
+            #We can force cell numbers...
             #get_ipython().execution_count = 77
+
+            #Use a different colour cell background to show we're using a Binder kernel...
+            _set_background()
+
             items = self.b.execute_request(cell)
             for item in items['iopub']:
                 if item['msg_type']=='execute_result':
