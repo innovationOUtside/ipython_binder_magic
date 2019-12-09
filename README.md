@@ -59,6 +59,8 @@ Doing this properly might help, of course...
 
 The implementation of the magic is a bit *ad hoc* and is based on the  [Sage Cell client](https://sagecell.sagemath.org/) [[code](https://github.com/sagemath/sagecell/blob/master/contrib/sagecell-client/sagecell-client.py)].
 
+A hearbeat is maintained through a `thread`. I'm guessing I really should use something like `asyncio`???
+
 I imagine a better way would be to draw on something like the `nb2kg` tooling that allows a notebook server to connect to a remote enterprise gateway, or the `jupyter_client` code that would set up and manage the connection to the notebook server in a more natural way.
 
 The notebook cell count number is currently ambiguous; at the moment it reports the cell count in the local notebook, not the cell execution count number in the remote kernel. We could hack the two to be the same, by setting the remote cell execution count to the same as the local notebook count.
